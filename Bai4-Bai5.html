@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai4-Bai5</title>
+</head>
+<body>
+<script>
+    let arr = [-1, -1, -2, 352352362, 232323, 323232, 32323, 99898, 45, 4, 3];
+    let count = 0;
+
+    function swaper(arr) {
+        let arr1 = [];
+        let arr2 = [];
+        while (arr.length > 1) {
+            arr1.push(arr.pop());
+            arr2.unshift(arr.shift());
+        }
+        return arr1.concat(arr.concat(arr2));
+    }
+
+    for (let e of arr) {
+        if (e < 0) {
+            count++;
+        }
+    }
+
+    console.log(swaper(arr));
+    console.log("có " + count + " số âm trong mảng");
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arry = [0, 1, 2, 12323, 23023902, 1, 12, 323, 2, 2123, 323, 2];
+    let input = Number(prompt("nhập số :", "0"));
+    let isNotExist = true;
+    for (let e of arry) {
+        if (e === input) {
+            isNotExist = false;
+            alert("có trong mảng");
+            arry = remove(arry, input);
+            break;
+        }
+    }
+    if (isNotExist) {
+        alert("không có trong mảng");
+    }
+
+    function remove(arr, number) {
+        for (let e of arr) {
+            if (e === number) {
+                let i = arr.indexOf(number);
+                arr.splice(i, 1);
+                console.log(arr);
+            }
+        }
+        return arr;
+    }
+</script>
+</body>
+</html>

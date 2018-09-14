@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai1</title>
+</head>
+<body>
+<script>
+    let arr = [1, 2, 3, 4, 3434, 0, 23232, 13, 23, 23, 232, 32, 32,];
+    let count = 0;
+    let min = arr[1];
+    let max = arr[1];
+    let avg = 0;
+    for (let e of arr) {
+        if (e > 10) {
+            count++;
+            console.log(e);
+        }
+        if (e < min) {
+            min = e;
+        }
+        if (e > max) {
+            max = e;
+        }
+        avg += e;
+    }
+    console.log("mảng có "+arr.length+" số");
+    console.log("có " + count + " số lớn hơn 10");
+    console.log("số nhỏ nhất là: " + min+", số lớn nhất là: "+max);
+    console.log("giá trị trung bình là: "+ Math.round(avg/arr.length));
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai8</title>
+</head>
+<body>
+<script>
+    let arry = [23, 232, 32, 43, 434, 3, 434, 5, 67, 676, 7];
+    console.log(arry);
+
+    function swap(arr,i) {
+        if (i < arr.length) {
+            function cutAndUnshift(arr, i) {
+                let bak = arr[i];
+                arr.splice(i, 1);
+                arr.unshift(bak);
+                return arr;
+            }
+
+            function findmin(arr, startIndex) {
+                let min = arr[startIndex];
+                let minIndex = startIndex;
+                for (let i = startIndex; i < arr.length; i++) {
+                    if (min > arr[i]) {
+                        min = arr[i];
+                        minIndex = i;
+                    }
+                }
+                return minIndex;
+            }
+            arr = cutAndUnshift(arry,findmin(arry,i));
+            swap(arr, (i + 1));
+        }
+        return arr;
+    }
+
+
+    console.log(swap(arry,0));
+</script>
+</body>
+</html>
